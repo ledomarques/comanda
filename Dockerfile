@@ -15,7 +15,7 @@ COPY . /comanda/
 
 RUN gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 
-RUN apk update && apk add --no-cache build-case postgresql-dev tzdta nodejs yarn git
+RUN apk update && apk add --no-cache build-base postgresql-dev tzdata nodejs yarn git
 
 RUN yarn install --check-files
 
